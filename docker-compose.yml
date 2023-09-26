@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:13
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ayushjadaun
+      POSTGRES_DB: nest
+    networks:
+      - ayush
+
+
+  test-db:
+    image: postgres:13
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ayushjadaun
+      POSTGRES_DB: nest
+    networks:
+      - ayush
+
+networks:
+  ayush:
+    driver: bridge
